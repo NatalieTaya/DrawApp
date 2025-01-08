@@ -1,0 +1,22 @@
+.instuments {
+  float: left;
+}
+#message{
+  margin: 1em;
+}
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+#canvas {
+  display: block;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px 2px 2px 2px;
+  border-color: aqua;
+  width: 1000px;
+  height: 500px;
+  background-color: aliceblue;
+}
+
