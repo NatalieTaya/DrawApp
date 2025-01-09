@@ -9,7 +9,6 @@ function App() {
     <>
       <div className='instuments'>
       <input type="color" id="color"></input>
-
         <BtnLine />
         <BtnRect />
         <BtnPencil />

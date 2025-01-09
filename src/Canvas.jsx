@@ -1,65 +1,46 @@
 import React from 'react'
 import myLets from './SomeVarandFunc'
-
-let canvas = document.getElementById("canvas")
-let context;
+import BtnPencil from './BtnPencil'
 
 export default class Canvas extends React.Component {
-    
-    drawRect() {
-      // context.fillStyle=document.getElementById("color").value
-      context.fillRect(50, 50, 3, 3);
+    constructor() {
+      super()
+      this.state ={
+        BtnPencilIsClicked : true,
+        BtnLineIsClicked : true,
+        BtnRectIsClicked : true,
+        X_0 : 0,
+        Y_0 : 0,
+        X_e : 0,
+        Y_e : 0,
+      }
+      this.drawRect = this.drawRect.bind(this) 
     }
-    handleMouseDown() {
+
+    drawRect() {
       let msg
       msg=document.getElementById("message")
-      context=document.getElementById("canvas").getContext("2d")
-      //if(myLets.penBtnIsclicked==true){
-      //this.drawRect
-      msg.innerHTML="Context!"
-     // }
-    }
-    handleMouseUp() {
+      let context=document.getElementById("canvas").getContext("2d")
+      this.setState({ X_0: event.pageX, Y_0: event.pageY });      
+      context.fillRect( this.state.X_0, this.state.Y_0 , 3, 3);
+      msg.innerHTML=this.state.X_0 + " " + this.state.Y_0
     }
     handleMouseMove() {
+      
     }
-
-
-
-   drawLine1() {
-     // context.strokeStyle=document.getElementById("color").value
-     // context.beginPath()
-     // context.moveTo(event.clientX-canvas.offsetLeft, event.clientY-canvas.offsetTop)
-  }
-   drawLine2() {
-     // context.lineTo(event.clientX-canvas.offsetLeft, event.clientY-canvas.offsetTop)
-    //  context.stroke()
-  }
-   startdrawing() {
-    //isdrawing = true;
-   // context.beginPath()
-  }
-   isDrawing() {
-    if (!isdrawing) {
-       return;
-    } else {
-      //context.strokeStyle=document.getElementById("color").value
-     // context.lineTo(event.clientX-canvas.offsetLeft, event.clientY-canvas.offsetTop)
-     // context.stroke()
-    }
-  }
-   notdrawing() {
-    //isdrawing = false;
-  }
 
     render() {
+      let func
+      if (this.state.BtnPencilIsClicked){
+        func = this.drawRect
+      }
+    
       return (
         <div>
           <canvas id="canvas"
-              onMouseDown={this.handleMouseDown}
+              onMouseDown={func}
               onMouseUp={this.handleMouseUp}
-              onMouseMove={this.handleMouseMove}>  
-                      
+              onMouseMove={this.handleMouseMove}>     
           </canvas>
         </div>
       )
