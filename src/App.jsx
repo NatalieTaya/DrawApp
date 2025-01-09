@@ -13,6 +13,12 @@ function App() {
         <BtnRect />
         <BtnPencil />
       </div>
+        <div id="messageX">
+          Message
+        </div>
+        <div id="messageY">
+          Message
+        </div>
         <div id="message">
           Message
         </div>

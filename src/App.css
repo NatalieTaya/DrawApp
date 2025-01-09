@@ -12,11 +12,9 @@
 #canvas {
   display: block;
   margin: 0 auto;
-  padding: 2rem;
-  border: 2px 2px 2px 2px;
-  border-color: aqua;
-  width: 1000px;
-  height: 500px;
-  background-color: aliceblue;
+  padding: 0rem;
+  border: 2px;
+  border-color: rgb(106, 0, 255);
+  background-color: rgb(255, 255, 255);
 }
 
